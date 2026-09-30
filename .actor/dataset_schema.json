@@ -1,0 +1,208 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "description": "Input URL"
+      },
+      "finalUrl": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "URL after redirects"
+      },
+      "status": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "HTTP status"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Error code when the PDF could not be parsed: http_404, not_a_pdf, file_too_large, password_protected, unreadable_pdf, timeout"
+      },
+      "fileSizeBytes": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Downloaded size in bytes"
+      },
+      "pageCount": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Total pages in the PDF"
+      },
+      "pagesExtracted": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Pages extracted (differs from pageCount when maxPages is set)"
+      },
+      "pageNumber": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Page number (pages mode only)"
+      },
+      "title": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "PDF title metadata"
+      },
+      "author": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Author metadata"
+      },
+      "subject": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Subject metadata"
+      },
+      "keywords": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Keywords metadata"
+      },
+      "creator": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Creating application"
+      },
+      "producer": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "PDF producer"
+      },
+      "creationDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Creation date, ISO 8601"
+      },
+      "modDate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Modification date, ISO 8601"
+      },
+      "language": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Document language when declared"
+      },
+      "text": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Extracted text (whole document or one page)"
+      },
+      "textLength": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Characters of text"
+      },
+      "wordCount": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "description": "Words of text"
+      },
+      "isLikelyScanned": {
+        "type": [
+          "boolean",
+          "null"
+        ],
+        "description": "True when there is little or no text per page, so the PDF is probably image-only (OCR not included)"
+      }
+    },
+    "additionalProperties": true
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "status",
+          "error",
+          "pageCount",
+          "title",
+          "author",
+          "creationDate",
+          "wordCount",
+          "isLikelyScanned",
+          "pageNumber"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": {
+            "label": "url"
+          },
+          "status": {
+            "label": "status"
+          },
+          "error": {
+            "label": "error"
+          },
+          "pageCount": {
+            "label": "pageCount"
+          },
+          "title": {
+            "label": "title"
+          },
+          "author": {
+            "label": "author"
+          },
+          "creationDate": {
+            "label": "creationDate"
+          },
+          "wordCount": {
+            "label": "wordCount"
+          },
+          "isLikelyScanned": {
+            "label": "isLikelyScanned"
+          },
+          "pageNumber": {
+            "label": "pageNumber"
+          }
+        }
+      }
+    }
+  }
+}

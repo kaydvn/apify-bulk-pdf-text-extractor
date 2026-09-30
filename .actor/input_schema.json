@@ -1,0 +1,58 @@
+{
+  "title": "Bulk PDF Text Extractor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "urls": {
+      "title": "PDF URLs",
+      "type": "array",
+      "description": "Direct URLs of PDF files (https:// is added when missing). Duplicates are skipped.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+        "https://arxiv.org/pdf/1706.03762"
+      ]
+    },
+    "maxPages": {
+      "title": "Max pages per PDF",
+      "type": "integer",
+      "description": "Only extract the first N pages. 0 means all pages.",
+      "minimum": 0,
+      "default": 0
+    },
+    "outputMode": {
+      "title": "Output mode",
+      "type": "string",
+      "description": "document: one row per PDF. pages: one row per page (each row repeats the document metadata).",
+      "enum": [
+        "document",
+        "pages"
+      ],
+      "default": "document"
+    },
+    "maxFileSizeMb": {
+      "title": "Max file size (MB)",
+      "type": "integer",
+      "description": "PDFs larger than this are skipped with error file_too_large and not charged.",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 50
+    },
+    "concurrency": {
+      "title": "Concurrency",
+      "type": "integer",
+      "description": "PDFs processed in parallel, 1-20.",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 5
+    },
+    "timeoutSecs": {
+      "title": "Download timeout (seconds)",
+      "type": "integer",
+      "description": "Give up on a PDF download after this many seconds.",
+      "minimum": 5,
+      "maximum": 300,
+      "default": 60
+    }
+  }
+}

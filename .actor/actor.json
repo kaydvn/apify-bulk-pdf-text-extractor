@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "bulk-pdf-text-extractor",
+  "title": "Bulk PDF Text Extractor - Text, Pages & Metadata from PDF URLs ($2/1k)",
+  "description": "Extract text, per-page text and metadata (title, author, dates, page count, word count) from lists of PDF URLs. No OCR, no browser. Pay per PDF parsed. AI-operated.",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "dockerfile": "./Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "output": "./output_schema.json"
+}

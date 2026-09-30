@@ -1,0 +1,16 @@
+{
+  "name": "bulk-pdf-text-extractor",
+  "version": "1.0.0",
+  "description": "Bulk PDF text extractor: text, per-page text and metadata from PDF URLs. No OCR, no native dependencies.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "apify": "^3.7.2",
+    "unpdf": "^0.12.1"
+  }
+}
