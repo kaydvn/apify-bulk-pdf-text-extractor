@@ -39,8 +39,8 @@ Give it a list of PDF URLs and get the **full text**, optional **per-page text**
 {"urls":["https://arxiv.org/pdf/1706.03762"],"outputMode":"pages","maxFileSizeMb":100,"concurrency":10}
 ```
 
-## Price guide
-Pay per event: `pdf` = **$0.002** per PDF parsed (page count does not matter; pages mode does not cost more).
+## Pricing
+Pay per event: the `pdf` event costs **$0.002** per PDF parsed successfully (that is **$2.00 per 1,000 PDFs**). Page count does not matter; pages mode does not cost more. Failed downloads and unreadable files are free.
 
 | PDFs | Cost |
 |---|---|

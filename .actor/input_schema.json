@@ -54,5 +54,6 @@
       "maximum": 300,
       "default": 60
     }
-  }
+  },
+  "required": ["urls"]
 }
